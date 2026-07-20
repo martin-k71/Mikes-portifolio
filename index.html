@@ -321,5 +321,17 @@
 
     <script src="js/gallery.js" defer></script>
     <script src="js/app.js" defer></script>
+ const audio =document.getElementById('player');
+ const playBtn =document.getElementById('playBtn');
+
+    PlayBtn.addEventListener('click', () => {
+        if (audio.pause) {
+            audioplay();
+            // Optional: change the button icon to apause icon here
+        } else {
+            audio.pause();
+            // Optional: change the button icon back to play icon here
+    }
+    });
   </body>
 </html>
