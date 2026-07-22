@@ -19,7 +19,7 @@ document.querySelectorAll('.rate-card, .rate-panel, .gallery-img').forEach((el) 
 });
 
 // Simple hero audio player (single track)
-const tracks = [ { title: 'Mike Audio', duration: '3:24', src: 'assets/mike-audio.mp3' } ];
+const tracks = [ { title: 'Mike Audio', duration: '3:24', src: 'mike-audio.mp3' } ];
 let trackIndex = 0;
 let isPlaying = false;
 
