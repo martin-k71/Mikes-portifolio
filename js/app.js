@@ -35,6 +35,7 @@ const heroAudio = new Audio(tracks[0].src);
 heroAudio.preload = 'metadata';
 
 if (playBtn) {
+  renderTrack(0); // <---Add this!
   function renderTrack(index) {
     const t = tracks[index];
     trackTitleEl.textContent = t.title;
