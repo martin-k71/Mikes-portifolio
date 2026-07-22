@@ -35,6 +35,38 @@ const heroAudio = new Audio(tracks[0].src);
 heroAudio.preload = 'metadata';
 
 if (playBtn) {
+  if (playBtn) {
+    // 1. Add the click listener right at the top here:
+    playBtn.addEventListener('click', togglePlay);
+
+    // 2. Your existing inner functions stay below it:
+    function renderTrack(index) {
+        const t = tracks[index];
+        trackTitleEl.textContent = t.title;
+        trackDurationEl.textContent = t.duration;
+        progressFill.style.width = '0%';
+        heroAudio.src = t.src;
+    }
+
+    function updateProgress() {
+        if (!heroAudio.duration || Number.isNaN(heroAudio.duration)) return;
+        progressFill.style.width = `${(heroAudio.currentTime / heroAudio.duration) * 100}%`;
+    }
+
+    function togglePlay() {
+        isPlaying = !isPlaying;
+
+        if (isPlaying) {
+            heroAudio.play();
+            playIcon.className = 'fas fa-pause';
+            playIcon.style.marginLeft = '0';
+        } else {
+            heroAudio.pause();
+            playIcon.className = 'fas fa-play';
+            playIcon.style.marginLeft = '2px';
+        }
+    }
+}
   function renderTrack(index) {
     const t = tracks[index];
     trackTitleEl.textContent = t.title;
